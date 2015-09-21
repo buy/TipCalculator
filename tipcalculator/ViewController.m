@@ -10,18 +10,43 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *billTextField;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+@property (weak, nonatomic) IBOutlet UISlider *tipControl;
+@property (weak, nonatomic) IBOutlet UILabel *tipPercentLabel;
+
+- (IBAction)valuesChanged:(id)sender;
+- (void)updateValues;
+
 @end
+
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self.billTextField becomeFirstResponder];
+    [self updateValues];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)valuesChanged:(id)sender {
+    [self updateValues];
+}
+
+- (void)updateValues {
+    float billAmount = [self.billTextField.text floatValue];
+    float tipPercent = self.tipControl.value;
+    float tipAmount = billAmount * tipPercent;
+    float totalAmount = billAmount + tipAmount;
+    
+    self.tipPercentLabel.text = [NSString stringWithFormat:@"%0.0f%%", tipPercent * 100];
+    self.tipLabel.text = [NSString stringWithFormat:@"%0.2f", tipAmount];
+    self.totalLabel.text = [NSString stringWithFormat:@"%0.2f", totalAmount];
 }
 
 @end
