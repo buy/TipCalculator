@@ -13,8 +13,7 @@
 		49389B3A1BAF9CD400E8B05D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49389B381BAF9CD400E8B05D /* Main.storyboard */; };
 		49389B3C1BAF9CD400E8B05D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49389B3B1BAF9CD400E8B05D /* Assets.xcassets */; };
 		49389B3F1BAF9CD400E8B05D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49389B3D1BAF9CD400E8B05D /* LaunchScreen.storyboard */; };
-		49389B491BAFD6AC00E8B05D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49389B471BAFD6AC00E8B05D /* SettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		49389B4A1BAFD6AC00E8B05D /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49389B481BAFD6AC00E8B05D /* SettingsViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		49389B4D1BB0AC0A00E8B05D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49389B4C1BB0AC0A00E8B05D /* SettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +27,8 @@
 		49389B3B1BAF9CD400E8B05D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49389B3E1BAF9CD400E8B05D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49389B401BAF9CD400E8B05D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49389B461BAFD6AC00E8B05D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		49389B471BAFD6AC00E8B05D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		49389B481BAFD6AC00E8B05D /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		49389B4B1BB0AC0A00E8B05D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		49389B4C1BB0AC0A00E8B05D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,14 +65,13 @@
 				49389B331BAF9CD400E8B05D /* AppDelegate.m */,
 				49389B351BAF9CD400E8B05D /* ViewController.h */,
 				49389B361BAF9CD400E8B05D /* ViewController.m */,
+				49389B4B1BB0AC0A00E8B05D /* SettingsViewController.h */,
+				49389B4C1BB0AC0A00E8B05D /* SettingsViewController.m */,
 				49389B381BAF9CD400E8B05D /* Main.storyboard */,
 				49389B3B1BAF9CD400E8B05D /* Assets.xcassets */,
 				49389B3D1BAF9CD400E8B05D /* LaunchScreen.storyboard */,
 				49389B401BAF9CD400E8B05D /* Info.plist */,
 				49389B2F1BAF9CD400E8B05D /* Supporting Files */,
-				49389B461BAFD6AC00E8B05D /* SettingsViewController.h */,
-				49389B471BAFD6AC00E8B05D /* SettingsViewController.m */,
-				49389B481BAFD6AC00E8B05D /* SettingsViewController.xib */,
 			);
 			path = tipcalculator;
 			sourceTree = "<group>";
@@ -147,7 +144,6 @@
 				49389B3F1BAF9CD400E8B05D /* LaunchScreen.storyboard in Resources */,
 				49389B3C1BAF9CD400E8B05D /* Assets.xcassets in Resources */,
 				49389B3A1BAF9CD400E8B05D /* Main.storyboard in Resources */,
-				49389B4A1BAFD6AC00E8B05D /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +157,7 @@
 				49389B371BAF9CD400E8B05D /* ViewController.m in Sources */,
 				49389B341BAF9CD400E8B05D /* AppDelegate.m in Sources */,
 				49389B311BAF9CD400E8B05D /* main.m in Sources */,
-				49389B491BAFD6AC00E8B05D /* SettingsViewController.m in Sources */,
+				49389B4D1BB0AC0A00E8B05D /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

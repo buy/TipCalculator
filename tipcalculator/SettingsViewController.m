@@ -7,8 +7,19 @@
 //
 
 #import "SettingsViewController.h"
+#import "ViewController.h"
 
 @interface SettingsViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *settingsMinTipPercent;
+@property (weak, nonatomic) IBOutlet UITextField *settingsMaxTipPercent;
+@property (weak, nonatomic) IBOutlet UITextField *settingsDefaultTipPercent;
+@property (nonatomic) NSUserDefaults *userDefaults;
+
+- (void)fetchUserDefaults;
+- (void)saveUserDefaults;
+
+- (IBAction)valuesChanged:(id)sender;
 
 @end
 
@@ -16,22 +27,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.userDefaults = [NSUserDefaults standardUserDefaults];
+    [self fetchUserDefaults];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)fetchUserDefaults {
+    if ([self.userDefaults valueForKey:@"tipcalculator_settings_default_tip_percent"]) {
+        self.settingsMinTipPercent.text = [NSString stringWithFormat:@"%@", [self.userDefaults valueForKey:@"tipcalculator_settings_min_tip_percent"]];
+        self.settingsMaxTipPercent.text = [NSString stringWithFormat:@"%@", [self.userDefaults valueForKey:@"tipcalculator_settings_max_tip_percent"]];
+        self.settingsDefaultTipPercent.text = [NSString stringWithFormat:@"%@", [self.userDefaults valueForKey:@"tipcalculator_settings_default_tip_percent"]];
+    }
 }
-*/
+
+- (void)saveUserDefaults {
+    [self.userDefaults setValue:self.settingsMinTipPercent.text forKey:@"tipcalculator_settings_min_tip_percent"];
+    [self.userDefaults setValue:self.settingsMaxTipPercent.text forKey:@"tipcalculator_settings_max_tip_percent"];
+    [self.userDefaults setValue:self.settingsDefaultTipPercent.text forKey:@"tipcalculator_settings_default_tip_percent"];
+    [self.userDefaults synchronize];
+}
+
+- (IBAction)valuesChanged:(id)sender {
+    [self saveUserDefaults];
+}
 
 @end
