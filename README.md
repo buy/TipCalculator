@@ -15,4 +15,4 @@ Completed:
 
 ![Video Walkthrough](https://raw.githubusercontent.com/buy/tip-calculator/master/demo/tip_calculator_demo.gif)
 
-Note: to embed the gif file, just check your gif file into your repo and update the name of the file above.
+GIF created with [LiceCap](http://www.cockos.com/licecap/)
