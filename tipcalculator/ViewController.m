@@ -17,10 +17,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *tipPercentLabel;
 @property (nonatomic) NSUserDefaults *userDefaults;
 
-- (void)fetchUserDefaults;
 - (void)updateValues;
+- (void)fetchUserDefaults;
+- (void)fetchUserInputs;
+- (void)saveUserInputs;
 
-- (IBAction)valuesChanged:(id)sender;
+- (IBAction)billAmountChanged:(id)sender;
+- (IBAction)tipPercentageChanged:(id)sender;
 
 @end
 
@@ -32,6 +35,7 @@
     [self.billTextField becomeFirstResponder];
     self.userDefaults = [NSUserDefaults standardUserDefaults];
     [self fetchUserDefaults];
+    [self fetchUserInputs];
     [self updateValues];
 }
 
@@ -39,6 +43,7 @@
     [super didReceiveMemoryWarning];
 }
 
+//calculate the tip and update the view
 - (void)updateValues {
     float billAmount = [self.billTextField.text floatValue];
     float tipPercent = (int)self.tipControl.value;
@@ -50,6 +55,7 @@
     self.totalLabel.text = [NSString stringWithFormat:@"%0.2f", totalAmount];
 }
 
+//load user settings
 - (void)fetchUserDefaults {
     if ([[self.userDefaults valueForKey:@"tipcalculator_settings_default_tip_percent"] floatValue]) {
         self.tipControl.minimumValue = [[self.userDefaults valueForKey:@"tipcalculator_settings_min_tip_percent"] floatValue];
@@ -58,8 +64,29 @@
     }
 }
 
-- (IBAction)valuesChanged:(id)sender {
+//fetch the last bill amount if user used the app within the last 10 mins
+- (void)fetchUserInputs {
+    NSTimeInterval timeSinceLastUse = [[NSDate date] timeIntervalSinceDate:[self.userDefaults objectForKey:@"tipcalculator_bill_text_field_expiration"]];
+
+    if (timeSinceLastUse < 600) {
+        self.billTextField.text = [self.userDefaults valueForKey:@"tipcalculator_bill_text_field"];
+    }
+}
+
+//store the current user bill inputs
+- (void)saveUserInputs {
+    [self.userDefaults setValue:self.billTextField.text forKey:@"tipcalculator_bill_text_field"];
+    [self.userDefaults setObject:[NSDate date] forKey:@"tipcalculator_bill_text_field_expiration"];
+    [self.userDefaults synchronize];
+}
+
+- (IBAction)tipPercentageChanged:(id)sender {
     [self updateValues];
+}
+
+- (IBAction)billAmountChanged:(id)sender {
+    [self updateValues];
+    [self saveUserInputs];
 }
 
 @end

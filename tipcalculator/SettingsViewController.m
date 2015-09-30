@@ -7,7 +7,6 @@
 //
 
 #import "SettingsViewController.h"
-#import "ViewController.h"
 
 @interface SettingsViewController ()
 
@@ -35,6 +34,7 @@
     [super didReceiveMemoryWarning];
 }
 
+//load user settings
 - (void)fetchUserDefaults {
     if ([self.userDefaults valueForKey:@"tipcalculator_settings_default_tip_percent"]) {
         self.settingsMinTipPercent.text = [NSString stringWithFormat:@"%@", [self.userDefaults valueForKey:@"tipcalculator_settings_min_tip_percent"]];
@@ -43,6 +43,7 @@
     }
 }
 
+//store user settings
 - (void)saveUserDefaults {
     [self.userDefaults setValue:self.settingsMinTipPercent.text forKey:@"tipcalculator_settings_min_tip_percent"];
     [self.userDefaults setValue:self.settingsMaxTipPercent.text forKey:@"tipcalculator_settings_max_tip_percent"];
