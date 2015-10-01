@@ -16,11 +16,13 @@
 @property (weak, nonatomic) IBOutlet UISlider *tipControl;
 @property (weak, nonatomic) IBOutlet UILabel *tipPercentLabel;
 @property (nonatomic) NSUserDefaults *userDefaults;
+@property (nonatomic) NSNumberFormatter *currencyFormatter;
 
 - (void)updateValues;
 - (void)fetchUserDefaults;
 - (void)fetchUserInputs;
 - (void)saveUserInputs;
+- (void)animateTipControl;
 
 - (IBAction)billAmountChanged:(id)sender;
 - (IBAction)tipPercentageChanged:(id)sender;
@@ -32,11 +34,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     [self.billTextField becomeFirstResponder];
     self.userDefaults = [NSUserDefaults standardUserDefaults];
+    self.currencyFormatter = [[NSNumberFormatter alloc] init];
+    [self.currencyFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+
     [self fetchUserDefaults];
     [self fetchUserInputs];
     [self updateValues];
+    [self updateTipControlColor];
+    [self animateTipControl];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,10 +57,10 @@
     float tipPercent = (int)self.tipControl.value;
     float tipAmount = billAmount * tipPercent / 100.0;
     float totalAmount = billAmount + tipAmount;
-    
+
     self.tipPercentLabel.text = [NSString stringWithFormat:@"%0.0f%%", tipPercent];
-    self.tipLabel.text = [NSString stringWithFormat:@"%0.2f", tipAmount];
-    self.totalLabel.text = [NSString stringWithFormat:@"%0.2f", totalAmount];
+    self.tipLabel.text = [self.currencyFormatter stringFromNumber:@(tipAmount)];
+    self.totalLabel.text = [self.currencyFormatter stringFromNumber:@(totalAmount)];
 }
 
 //load user settings
@@ -80,7 +88,30 @@
     [self.userDefaults synchronize];
 }
 
+- (void)animateTipControl {
+    float tipControlValue = self.tipControl.value;
+    self.tipControl.value = self.tipControl.minimumValue;
+    [UIView animateWithDuration:1.0 animations:^{
+        [self.tipControl setValue:tipControlValue animated:YES];
+    }];
+}
+
+- (void)updateTipControlColor {
+    float tipPercent = (int)self.tipControl.value;
+
+    if (tipPercent < 10) {
+        self.tipControl.tintColor = [UIColor redColor];
+    }
+    else if (10 <= tipPercent && tipPercent < 15) {
+        self.tipControl.tintColor = [UIColor orangeColor];
+    }
+    else {
+        self.tipControl.tintColor = [UIColor colorWithRed:0.2 green:0.8 blue:0.2 alpha:1];
+    }
+}
+
 - (IBAction)tipPercentageChanged:(id)sender {
+    [self updateTipControlColor];
     [self updateValues];
 }
 
