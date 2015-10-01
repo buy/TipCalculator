@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:tipcalculator.xcodeproj">
+      location = "self:/Users/cliu/Dev/tipcalculator/Tipper.xcodeproj">
    </FileRef>
 </Workspace>

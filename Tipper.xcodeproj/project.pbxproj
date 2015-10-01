@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49389B2C1BAF9CD400E8B05D /* tipcalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipcalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49389B2C1BAF9CD400E8B05D /* Tipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49389B301BAF9CD400E8B05D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49389B321BAF9CD400E8B05D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49389B331BAF9CD400E8B05D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		49389B231BAF9CD300E8B05D = {
 			isa = PBXGroup;
 			children = (
-				49389B2E1BAF9CD400E8B05D /* tipcalculator */,
+				49389B2E1BAF9CD400E8B05D /* tipper */,
 				49389B2D1BAF9CD400E8B05D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,12 +53,12 @@
 		49389B2D1BAF9CD400E8B05D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49389B2C1BAF9CD400E8B05D /* tipcalculator.app */,
+				49389B2C1BAF9CD400E8B05D /* Tipper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		49389B2E1BAF9CD400E8B05D /* tipcalculator */ = {
+		49389B2E1BAF9CD400E8B05D /* tipper */ = {
 			isa = PBXGroup;
 			children = (
 				49389B321BAF9CD400E8B05D /* AppDelegate.h */,
@@ -73,6 +73,7 @@
 				49389B401BAF9CD400E8B05D /* Info.plist */,
 				49389B2F1BAF9CD400E8B05D /* Supporting Files */,
 			);
+			name = tipper;
 			path = tipcalculator;
 			sourceTree = "<group>";
 		};
@@ -87,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		49389B2B1BAF9CD400E8B05D /* tipcalculator */ = {
+		49389B2B1BAF9CD400E8B05D /* Tipper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49389B431BAF9CD400E8B05D /* Build configuration list for PBXNativeTarget "tipcalculator" */;
+			buildConfigurationList = 49389B431BAF9CD400E8B05D /* Build configuration list for PBXNativeTarget "Tipper" */;
 			buildPhases = (
 				49389B281BAF9CD400E8B05D /* Sources */,
 				49389B291BAF9CD400E8B05D /* Frameworks */,
@@ -99,9 +100,9 @@
 			);
 			dependencies = (
 			);
-			name = tipcalculator;
+			name = Tipper;
 			productName = tipcalculator;
-			productReference = 49389B2C1BAF9CD400E8B05D /* tipcalculator.app */;
+			productReference = 49389B2C1BAF9CD400E8B05D /* Tipper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +119,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 49389B271BAF9CD300E8B05D /* Build configuration list for PBXProject "tipcalculator" */;
+			buildConfigurationList = 49389B271BAF9CD300E8B05D /* Build configuration list for PBXProject "Tipper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -131,7 +132,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				49389B2B1BAF9CD400E8B05D /* tipcalculator */,
+				49389B2B1BAF9CD400E8B05D /* Tipper */,
 			);
 		};
 /* End PBXProject section */
@@ -269,8 +270,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tipcalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ngliu.tipcalculator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ngliu.tipper;
+				PRODUCT_NAME = Tipper;
 			};
 			name = Debug;
 		};
@@ -280,15 +281,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tipcalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ngliu.tipcalculator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ngliu.tipper;
+				PRODUCT_NAME = Tipper;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		49389B271BAF9CD300E8B05D /* Build configuration list for PBXProject "tipcalculator" */ = {
+		49389B271BAF9CD300E8B05D /* Build configuration list for PBXProject "Tipper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49389B411BAF9CD400E8B05D /* Debug */,
@@ -297,13 +298,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49389B431BAF9CD400E8B05D /* Build configuration list for PBXNativeTarget "tipcalculator" */ = {
+		49389B431BAF9CD400E8B05D /* Build configuration list for PBXNativeTarget "Tipper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49389B441BAF9CD400E8B05D /* Debug */,
 				49389B451BAF9CD400E8B05D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
